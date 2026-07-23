@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blaze Personalizaciones | Sublimación & Productos Personalizados</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            900: '#7c2d12',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 1; }
+        }
+        .pulse-online {
+            animation: pulse-ring 2s infinite ease-in-out;
+        }
+        .cart-drawer-transition {
+            transition: transform 0.3s ease-in-out;
+        }
+        .glass-header {
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-orange-500 selection:text-white pb-12">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-header border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid font-bold fa-fire text-white text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-heading font-black text-xl sm:text-2xl tracking-wider text-white uppercase block leading-none">BLAZE</span>
+                    <span class="text-xs text-orange-400 font-semibold tracking-widest uppercase">Personalizaciones</span>
+                </div>
+            </a>
+
+            <!-- Quick Navigation & Cart Button -->
+            <div class="flex items-center gap-4">
+                <a href="#catalogo" class="hidden md:inline-flex text-sm font-medium text-slate-300 hover:text-orange-400 transition-colors">
+                    Catálogo
+                </a>
+                <a href="#contacto" class="hidden md:inline-flex text-sm font-medium text-slate-300 hover:text-orange-400 transition-colors">
+                    Ubicación
+                </a>
+                
+                <!-- Cart Trigger Button -->
+                <button id="cartToggleBtn" onclick="toggleCartDrawer(true)" class="relative bg-slate-800 hover:bg-slate-700 text-white p-3 rounded-xl border border-slate-700 flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
+                    <i class="fa-solid fa-cart-shopping text-orange-400 text-lg"></i>
+                    <span class="hidden sm:inline font-medium text-sm">Carrito</span>
+                    <span id="cartBadgeCount" class="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center shadow-md scale-0 transition-transform">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900">
+        <!-- Glow Effect Backgrounds -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs sm:text-sm font-semibold mb-6 animate-pulse">
+                <i class="fa-solid fa-sparkles"></i> Sublimación de Alta Definición
+            </div>
+            
+            <h1 class="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-none mb-6">
+                Lleva tus ideas al siguiente nivel con <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-amber-400 to-red-500">Diseños Únicos</span>
+            </h1>
+            
+            <p class="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto font-normal leading-relaxed mb-10">
+                Especialistas en la estampación y personalización de prendas y artículos promocionales. Calidad premium, colores vibrantes y máxima durabilidad.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#catalogo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-base shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all flex items-center justify-center gap-3 group">
+                    <span>Ver Catálogo de Productos</span>
+                    <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                </a>
+                <button onclick="openDirectWhatsApp('¡Hola Blaze Personalizaciones! Quisiera cotizar un diseño personalizado especial.')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-base border border-slate-700 transition-all flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                    <span>Consulta Directa</span>
+                </button>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-800/80 max-w-4xl mx-auto text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-orange-400 shrink-0">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Prendas Premium</h4>
+                        <p class="text-xs text-slate-400">100% Personalizadas</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-orange-400 shrink-0">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Sublimación Pro</h4>
+                        <p class="text-xs text-slate-400">Colores que no caen</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-orange-400 shrink-0">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Entrega Rápida</h4>
+                        <p class="text-xs text-slate-400">Puntualidad garantizada</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-orange-400 shrink-0">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Atención Local</h4>
+                        <p class="text-xs text-slate-400">Santa Cruz, Bolivia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-COMMERCE PRODUCT CATALOG -->
+    <section id="catalogo" class="py-20 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-orange-400 font-bold text-xs uppercase tracking-widest block mb-2">Catálogo Oficial</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Nuestros Productos Destacados</h2>
+                </div>
+                <p class="text-slate-400 text-sm max-w-md mt-2 md:mt-0">
+                    Selecciona tus artículos, especifica la cantidad requerida y genera tu pedido directo a nuestro WhatsApp comercial.
+                </p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productGrid">
+                <!-- Products dynamically rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO ORDER & CUSTOMIZE -->
+    <section class="py-16 bg-slate-950 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">¿Cómo funciona la personalización?</h3>
+                <p class="text-slate-400 text-sm sm:text-base">Proceso simple e intuitivo en solo 3 pasos para hacer realidad tus productos personalizados.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center relative">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-400 font-bold text-2xl flex items-center justify-center mx-auto mb-6">1</div>
+                    <h4 class="font-bold text-lg text-white mb-2">Agrega al Carrito</h4>
+                    <p class="text-slate-400 text-sm">Elige tus prendas o tazas favoritas del catálogo e indica las cantidades que necesitas.</p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center relative">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-400 font-bold text-2xl flex items-center justify-center mx-auto mb-6">2</div>
+                    <h4 class="font-bold text-lg text-white mb-2">Detalla tu Diseño</h4>
+                    <p class="text-slate-400 text-sm">Escribe en las notas del carrito qué imagen, logo, frase o temática deseas sublimar.</p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center relative">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-400 font-bold text-2xl flex items-center justify-center mx-auto mb-6">3</div>
+                    <h4 class="font-bold text-lg text-white mb-2">Envía por WhatsApp</h4>
+                    <p class="text-slate-400 text-sm">Confirmamos la muestra digital de tu diseño y coordinamos la producción y entrega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-orange-400 font-bold text-xs uppercase tracking-widest block mb-2">Opiniones de Clientes</span>
+                <h2 class="font-heading text-3xl font-extrabold text-white">Lo que dicen sobre Blaze Personalizaciones</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic mb-6">"Pedí poleras para nuestro grupo de amigos y la calidad de la sublimación quedó increíble. Los colores super vivos y entregaron justo a tiempo."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center font-bold text-white text-sm">
+                            MC
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-sm">Marco Antonio C.</h5>
+                            <span class="text-xs text-slate-400">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic mb-6">"Las tazas personalizadas con fotos de nuestra empresa fueron un éxito total. Excelente atención por WhatsApp desde el primer mensaje."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center font-bold text-white text-sm">
+                            VR
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-sm">Valeria Roca</h5>
+                            <span class="text-xs text-slate-400">Cliente Frecuente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic mb-6">"Las chompas personalizadas abrigadas y con la sublimación nítida. Muy buena atención en el local de Comercial Vargas."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center font-bold text-white text-sm">
+                            DL
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-sm">David López</h5>
+                            <span class="text-xs text-slate-400">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACT -->
+    <section id="contacto" class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl p-8 sm:p-12 border border-slate-800 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="space-y-4 max-w-xl">
+                    <span class="text-orange-400 font-bold text-xs uppercase tracking-widest block">Ubicación Física</span>
+                    <h3 class="font-heading text-2xl sm:text-3xl font-extrabold text-white">¡Visítanos o realiza tu pedido en línea!</h3>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Estamos ubicados estratégicamente para atender todos tus requerimientos de sublimación y estampados personalizados.
+                    </p>
+                    
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start gap-3 text-slate-300">
+                            <i class="fa-solid fa-location-dot text-orange-400 text-xl mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Dirección comercial:</strong>
+                                <span>Av. El Quior Guapurú 1, Comercial Vargas</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <div>
+                                <strong class="text-white block">Atención WhatsApp:</strong>
+                                <span>+591 62505876</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-auto flex flex-col sm:flex-row gap-4">
+                    <button onclick="openDirectWhatsApp('¡Hola! Me gustaría coordinar una visita a su local en Av. El Quior Guapurú 1.')" class="px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Contactar por WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDING SHOPPING CART DRAWER -->
+    <div id="cartDrawerOverlay" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    
+    <div id="cartDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-slate-900 border-l border-slate-800 z-50 translate-x-full cart-drawer-transition flex flex-col shadow-2xl">
+        <!-- Cart Drawer Header -->
+        <div class="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-bag-shopping text-orange-400 text-xl"></i>
+                <h3 class="font-heading font-extrabold text-xl text-white">Tu Pedido</h3>
+                <span id="cartItemCountTag" class="bg-slate-800 text-orange-400 text-xs font-bold px-2.5 py-1 rounded-full border border-slate-700">0 ítems</span>
+            </div>
+            <button onclick="toggleCartDrawer(false)" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List Container -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Items rendered dynamically -->
+        </div>
+
+        <!-- Cart Drawer Footer -->
+        <div class="p-6 border-t border-slate-800 bg-slate-950 space-y-4">
+            <!-- Customization Notes Input -->
+            <div>
+                <label for="customNoteInput" class="block text-xs font-semibold text-slate-300 mb-1">
+                    <i class="fa-solid fa-pen-to-square text-orange-400 mr-1"></i> Detalles de Personalización / Nombres:
+                </label>
+                <textarea id="customNoteInput" rows="2" placeholder="Ej: Polera color negro, logo en el pecho izquierdo con texto 'Camila'..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-orange-500 transition-colors resize-none"></textarea>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="space-y-2 pt-2 border-t border-slate-800/60">
+                <div class="flex justify-between text-sm text-slate-400">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotalText" class="font-medium text-slate-200">0 Bs</span>
+                </div>
+                <div class="flex justify-between text-base font-bold text-white">
+                    <span>Total Estimado:</span>
+                    <span id="cartTotalText" class="text-xl font-extrabold text-orange-400">0 Bs</span>
+                </div>
+            </div>
+
+            <!-- WhatsApp Checkout Button -->
+            <button id="checkoutBtn" onclick="checkoutToWhatsApp()" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-base shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed">
+                <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                <span>Finalizar Pedido por WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON WITH ONLINE BADGE -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
+        <!-- Floating Tooltip / Online Status -->
+        <div class="bg-slate-800 border border-slate-700 text-white text-xs px-3 py-1.5 rounded-full shadow-lg flex items-center gap-2">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="pulse-online absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span class="font-semibold text-emerald-400">• Online</span>
+            <span class="hidden sm:inline text-slate-300">¡Hola! Estoy online</span>
+        </div>
+
+        <!-- Main Button -->
+        <button onclick="openDirectWhatsApp('¡Hola Blaze Personalizaciones! Quisiera hacer una consulta rápida.')" class="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-xl shadow-emerald-500/40 flex items-center justify-center transition-all hover:scale-110 active:scale-95 group" title="Chat directo en WhatsApp">
+            <i class="fa-brands fa-whatsapp text-3xl group-hover:rotate-12 transition-transform"></i>
+        </button>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Business details static definition
+        const BUSINESS_NAME = "Blaze Personalizaciones";
+        const WHATSAPP_NUMBER = "59162505876";
+        const BUSINESS_LOCATION = "A.v el quior guapuru 1 comercial vargas";
+
+        // Catalog Products List
+        const products = [
+            {
+                id: "polera-1",
+                name: "Poleras Personalizadas",
+                category: "Prendas Sublimadas",
+                price: 160,
+                unit: "Bs",
+                image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
+                description: "Poleras de alta calidad personalizadas mediante sublimación nítida. Resistente a múltiples lavados sin perder brillo."
+            },
+            {
+                id: "chompa-1",
+                name: "Chompas Personalizadas",
+                category: "Prendas de Invierno",
+                price: 190,
+                unit: "Bs",
+                image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80",
+                description: "Chompas/Polerones abrigadores con estampado personalizado completo o localizado. Diseños a tu elección."
+            },
+            {
+                id: "taza-1",
+                name: "Tazas Personalizadas",
+                category: "Artículos Promocionales",
+                price: 45,
+                unit: "Bs",
+                image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80",
+                description: "Tazas cerámicas personalizadas con tus fotos, logos o frases favoritas. Acabado brillante y alta fidelidad."
+            }
+        ];
+
+        // Reactive Cart State Array
+        let cart = [];
+
+        // Render Product Catalog Dynamic Grid
+        function renderProducts() {
+            const container = document.getElementById('productGrid');
+            container.innerHTML = products.map(product => `
+                <div class="bg-slate-800/80 rounded-2xl border border-slate-700/80 overflow-hidden flex flex-col justify-between hover:border-orange-500/50 transition-all hover:shadow-xl hover:shadow-orange-500/10 group">
+                    <div>
+                        <!-- Image Container with fallback -->
+                        <div class="relative h-56 bg-slate-900 overflow-hidden">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/f97316?text=Blaze+Sublimación'">
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-orange-400 text-xs font-semibold px-3 py-1 rounded-full border border-orange-500/30">
+                                ${product.category}
+                            </span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading font-bold text-xl text-white group-hover:text-orange-400 transition-colors">${product.name}</h3>
+                                <div class="text-right">
+                                    <span class="font-extrabold text-2xl text-orange-400">${product.price}</span>
+                                    <span class="text-xs text-slate-400 font-semibold">${product.unit}</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">${product.description}</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Footer -->
+                    <div class="p-6 pt-0">
+                        <button onclick="addToCart('${product.id}')" class="w-full py-3 px-4 rounded-xl bg-orange-500/10 hover:bg-orange-500 text-orange-400 hover:text-white font-bold text-sm border border-orange-500/30 transition-all flex items-center justify-center gap-2 active:scale-95">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Agregar al Carrito</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Add Product to Cart Logic
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            toggleCartDrawer(true);
+        }
+
+        // Change Item Quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                updateCartUI();
+            }
+        }
+
+        // Remove Item from Cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        // Toggle Drawer Visibility
+        function toggleCartDrawer(open) {
+            const overlay = document.getElementById('cartDrawerOverlay');
+            const drawer = document.getElementById('cartDrawer');
+
+            if (open) {
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                drawer.classList.remove('translate-x-full');
+            } else {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                drawer.classList.add('translate-x-full');
+            }
+        }
+
+        // Update Cart Drawer UI & Counter
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            const badge = document.getElementById('cartBadgeCount');
+            const countTag = document.getElementById('cartItemCountTag');
+            const subtotalEl = document.getElementById('cartSubtotalText');
+            const totalEl = document.getElementById('cartTotalText');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            // Calculate Total Quantity & Total Price
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            // Update Badge Count
+            badge.innerText = totalItems;
+            if (totalItems > 0) {
+                badge.classList.remove('scale-0');
+            } else {
+                badge.classList.add('scale-0');
+            }
+
+            countTag.innerText = `${totalItems} ${totalItems === 1 ? 'ítem' : 'ítems'}`;
+            subtotalEl.innerText = `${totalPrice} Bs`;
+            totalEl.innerText = `${totalPrice} Bs`;
+
+            // Enable / Disable Checkout Button
+            checkoutBtn.disabled = cart.length === 0;
+
+            // Render Items HTML
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16 text-slate-500">
+                        <i class="fa-solid fa-cart-flatbed text-5xl mb-4 text-slate-700"></i>
+                        <p class="font-medium text-slate-400">Tu carrito está vacío</p>
+                        <p class="text-xs text-slate-600 mt-1">Explora el catálogo y agrega productos personalizados.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex gap-4 items-center">
+                    <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-lg object-cover bg-slate-900 border border-slate-700 shrink-0">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-sm text-white truncate">${item.name}</h4>
+                        <span class="text-xs text-orange-400 font-semibold">${item.price} Bs c/u</span>
+                        
+                        <!-- Quantity Control -->
+                        <div class="flex items-center gap-2 mt-2">
+                            <button onclick="updateQuantity('${item.id}', -1)" class="w-6 h-6 rounded-md bg-slate-700 hover:bg-slate-600 text-white font-bold flex items-center justify-center text-xs transition-colors">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <span class="text-xs font-bold text-white px-1">${item.quantity}</span>
+                            <button onclick="updateQuantity('${item.id}', 1)" class="w-6 h-6 rounded-md bg-slate-700 hover:bg-slate-600 text-white font-bold flex items-center justify-center text-xs transition-colors">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-right flex flex-col justify-between items-end h-full">
+                        <button onclick="removeFromCart('${item.id}')" class="text-slate-500 hover:text-red-400 text-xs transition-colors p-1" title="Eliminar ítem">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                        <span class="font-bold text-sm text-white">${item.price * item.quantity} Bs</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Formatter and Sender for WhatsApp Order Checkout
+        function checkoutToWhatsApp() {
+            if (cart.length === 0) return;
+
+            const note = document.getElementById('customNoteInput').value.trim();
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            // Construct Clean Text Breakdown
+            let message = `*¡Hola! Quiero realizar un pedido en ${BUSINESS_NAME}*\n\n`;
+            message += `🛍️ *DETALLE DEL PEDIDO:*\n`;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                message += `${index + 1}. *${item.name}*\n`;
+                message += `   └ Cantidad: ${item.quantity} | Subtotal: ${itemTotal} Bs\n`;
+            });
+
+            message += `\n💰 *MONTO TOTAL:* ${totalPrice} Bs\n`;
+            message += `📍 *Ubicación del Negocio:* ${BUSINESS_LOCATION}\n`;
+
+            if (note) {
+                message += `\n✏️ *Notas de Personalización:*\n"${note}"\n`;
+            } else {
+                message += `\n✏️ *Notas de Personalización:* (Sin especificación previa)\n`;
+            }
+
+            message += `\nQuedo a la espera para coordinar el diseño digital y el pago. ¡Gracias!`;
+
+            // Open WhatsApp Link directly
+            const encodedMessage = encodeURIComponent(message);
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            window.open(waUrl, '_blank');
+        }
+
+        // Direct Quick Contact via WhatsApp
+        function openDirectWhatsApp(customMessage) {
+            const encoded = encodeURIComponent(customMessage || `¡Hola ${BUSINESS_NAME}! Me interesa información sobre sus productos de sublimación.`);
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank');
+        }
+
+        // On DOM Load
+        window.onload = function() {
+            renderProducts();
+            updateCartUI();
+        };
+    </script>
+</body>
+</html>
+
+
+<script
+src="https://catza-digital.github.io/catza-ai-widget/widget.js"
+data-client="blazepersonalizaciones"
+data-position="left"
+data-message="📝 ¿Cotizamos tu servicio ? poleras chompas y tazas personalizadas">
+</script>
