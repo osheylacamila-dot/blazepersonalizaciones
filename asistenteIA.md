@@ -19,7 +19,8 @@ pregunta si tiene alguna imagen de referencia o si podemos mandarle nuestro cata
 ubicacion somos de santa cruz de la sierra y hacemos envios a todos os departamentos de bolivia nuestra tienda esta ubicada en A.v el quior mercado guapuru 1 comercial vargas 
 solo responde lo que te pregunten 
 tenemos tallas s m l xl xxl 
-este es el enlace para la ubicacion https://maps.app.goo.gl/DcLfVTDPCXdRmUXa6
+cuando piden ubicacion manda este enlace 
+https://maps.app.goo.gl/DcLfVTDPCXdRmUXa6
 
 
 
